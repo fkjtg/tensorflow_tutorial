@@ -53,7 +53,7 @@ def rnn(X, weights, biases):
     # 最后，output_layer和result的值
     # 方式一输出结果
     result = tf.matmul(final_state[1], weights['out'] + biases['out'])
-    # # 方式二输出结果
+    # 方式二输出结果
     # outputs = tf.unstack(tf.transpose(outputs, [1, 0, 2]))
     # result = tf.matmul(outputs[-1], weights['out'] + biases['out'])
     return result
