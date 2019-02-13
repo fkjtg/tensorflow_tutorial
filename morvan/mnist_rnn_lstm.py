@@ -36,7 +36,7 @@ def rnn(X, weights, biases):
     :return:
     '''
 
-    # 首先，定义input_layer
+    # 首先，定义input_layer (数据转换见：https://blog.csdn.net/lanlana168/article/details/81136907)
     # X(128batch,28row,28col)
     # ==>X(128*28,28col)
     X = tf.reshape(X, [-1, col_inputs])
