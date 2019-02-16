@@ -1,3 +1,7 @@
+"""
+tf.stack()和tf.unstack()的用法:https://blog.csdn.net/u012193416/article/details/77411535
+"""
+
 import numpy as np
 import tensorflow as tf
 

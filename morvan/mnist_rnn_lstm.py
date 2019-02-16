@@ -1,4 +1,4 @@
-'''教程来源：https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/5-08-RNN2/'''
+"""教程来源：https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/5-08-RNN2/"""
 
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
@@ -28,13 +28,13 @@ biases = {
 
 
 def rnn(X, weights, biases):
-    '''
+    """
     RNN 主体结构, 这个 RNN 总共有 3 个组成部分 ( input_layer, cell, output_layer).
     :param X:
     :param weights:
     :param biases:
     :return:
-    '''
+    """
 
     # 首先，定义input_layer (数据转换见：https://blog.csdn.net/lanlana168/article/details/81136907)
     # X(128batch,28row,28col)
@@ -45,7 +45,7 @@ def rnn(X, weights, biases):
     # ==>X_in(128,28,128)
     X_in = tf.reshape(X_in, [-1, row_inputs, n_hidden_units])
 
-    # 接着，cell中计算。state划分成2部分（c_state,m_state）
+    # 接着，cell中计算。state划分成2部分（c_state,h_state）
     lstm_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_units)
     init_state = lstm_cell.zero_state(batch_size, dtype=tf.float32)
     outputs, final_state = tf.nn.dynamic_rnn(lstm_cell, X_in, initial_state=init_state, time_major=False)
