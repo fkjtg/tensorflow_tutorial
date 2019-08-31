@@ -1,0 +1,6 @@
+model_checkpoint_path: "my_cp"
+all_model_checkpoint_paths: "..\\traing_2\\cp-0035.ckpt"
+all_model_checkpoint_paths: "..\\traing_2\\cp-0040.ckpt"
+all_model_checkpoint_paths: "..\\traing_2\\cp-0045.ckpt"
+all_model_checkpoint_paths: "..\\traing_2\\cp-0050.ckpt"
+all_model_checkpoint_paths: "my_cp"
