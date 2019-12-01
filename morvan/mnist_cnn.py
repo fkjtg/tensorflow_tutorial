@@ -1,5 +1,7 @@
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
@@ -98,7 +100,7 @@ prediction = tf.nn.softmax(tf.matmul(h_fc1_drop, w_fc2) + b_fc2)
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(ys * tf.log(prediction), reduction_indices=[1]))
 train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 
-sess = tf.Session()
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 init = tf.global_variables_initializer()
 sess.run(init)
 

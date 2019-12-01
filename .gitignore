@@ -1,6 +1,7 @@
 # 忽略改文件夹下面的所有文件
 /venv/*
 /.idea/*
+/morvan/logs/*
 
 # 忽略.csv的文件
 *.csv
